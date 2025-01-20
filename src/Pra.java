@@ -120,6 +120,8 @@ class Pra{
         set.add(c2);
         set.add(c3);
         System.out.println(set);
+
+        System.out.println("123");
     }
 }
 
