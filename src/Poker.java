@@ -282,16 +282,17 @@ public class Poker{
             } else break;
         }
 
-        int nickNameSet=0;
-        while (true) { //닉네임이 20자 넘어가면 다시 입력
+        while (nickNameSet < playerNums) { // 인원 수만큼 반복
             System.out.print("플레이어의 이름을 입력해주세요.\n최대 20자까지 가능합니다.\n");
-            players[nickNameSet] = new Player(scan.nextLine(), 10000,0,0);
-            if (players[nickNameSet].nickName.length() > 20){
-                nickNameSet--;
-                System.out.print("이름은 최대 20자까지만 가능합니다.\n다시 입력해주세요\n");
+            String nickName = scan.nextLine();
+
+            // 이름이 20자를 초과하면 다시 입력받기
+            if (nickName.length() > 20) {
+                System.out.println("이름은 최대 20자까지만 가능합니다.\n다시 입력해주세요.");
+            } else {
+                players[nickNameSet] = new Player(nickName, 10000, 0, 0); // 이름 입력 후 Player 객체 생성
+                nickNameSet++; // 다음 플레이어로 이동
             }
-            nickNameSet++;
-            if (nickNameSet == playerNums) break;
         }
 
         System.out.println("게임을 시작합니다.");
