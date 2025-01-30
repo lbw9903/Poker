@@ -301,7 +301,7 @@ public class Poker{
         Rank rank = new Rank();
         Dealer dealer = new Dealer();
 
-        for (int i=0; i<10; i++) { //게임횟수
+        for (int i=0; i<100; i++) { //게임횟수
 
             System.out.println(i+1+"번째 게임결과");
             // Dealer의 카드나눠주는 메서드
